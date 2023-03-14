@@ -30,7 +30,12 @@ def is_circle_circumference_greater_than_square_radius(circle_radius, square_rad
         return False
 
 
-if __name__ == '__main__':
+def adjacency_matrix_graph():
+    print("work in progress")
+
+
+
+def test_function_for_circumference_and_radius():
     print_hi('PyCharm')
 
     circle_radius = 2
@@ -42,3 +47,9 @@ if __name__ == '__main__':
 
     # quick pause
     input()
+
+
+if __name__ == '__main__':
+    print('hello world')
+
+
