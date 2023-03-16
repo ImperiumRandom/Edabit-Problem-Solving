@@ -29,12 +29,6 @@ def is_circle_circumference_greater_than_square_radius(circle_radius, square_rad
     elif perimeter_of_square > circumference_of_circle:
         return False
 
-
-def adjacency_matrix_graph():
-    print("work in progress")
-
-
-
 def test_function_for_circumference_and_radius():
     print_hi('PyCharm')
 
@@ -49,7 +43,23 @@ def test_function_for_circumference_and_radius():
     input()
 
 
+def adjacency_matrix_graph(matrix, first_node, second_node):
+    print("check index's of matrix with parameters")
+
+
+
+
+
+
+
 if __name__ == '__main__':
     print('hello world')
 
+    # adjacent matrix for 4 points (0-3)
+    my_matrix = [[0,1,0,0]
+             ,[1,0,1,1]
+             ,[0,1,0,1]
+             ,[0,1,1,0]]
+
+    adjacency_matrix_graph(my_matrix, 1, 3)
 
