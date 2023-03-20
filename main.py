@@ -29,6 +29,7 @@ def is_circle_circumference_greater_than_square_radius(circle_radius, square_rad
     elif perimeter_of_square > circumference_of_circle:
         return False
 
+
 def test_function_for_circumference_and_radius():
     print_hi('PyCharm')
 
@@ -44,22 +45,39 @@ def test_function_for_circumference_and_radius():
 
 
 def adjacency_matrix_graph(matrix, first_node, second_node):
-    print("check index's of matrix with parameters")
+    if matrix[first_node][second_node] == 1:
+        return True
+
+    else:
+        return False
 
 
+def test_function_for_adjacency_matrix():
+    # adjacent matrix for 4 points (0-3)
+    my_matrix = [[0, 1, 0, 0],
+                 [1, 0, 1, 1],
+                 [0, 1, 0, 1],
+                 [0, 1, 1, 0]]
 
+    user_input = (input('You have four nodes in your matrix please input a number to see if the nodes are adjacent'
+                        '\nUserInput: ')).split(',')
 
+    first_user_node = int(user_input[0])
 
+    second_user_node = int(user_input[1])
+
+    if adjacency_matrix_graph(my_matrix, first_user_node, second_user_node):
+        print('These nodes are adjacent')
+
+    else:
+        print('These nodes are not adjacent')
 
 
 if __name__ == '__main__':
     print('hello world')
 
-    # adjacent matrix for 4 points (0-3)
-    my_matrix = [[0,1,0,0]
-             ,[1,0,1,1]
-             ,[0,1,0,1]
-             ,[0,1,1,0]]
+    test_function_for_adjacency_matrix()
 
-    adjacency_matrix_graph(my_matrix, 1, 3)
+    print()
 
+    input()  # pause input
