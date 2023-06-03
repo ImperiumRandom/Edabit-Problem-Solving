@@ -73,11 +73,87 @@ def test_function_for_adjacency_matrix():
         print('These nodes are not adjacent')
 
 
+def food_Catagory_Storage():
+    # defining variables
+    fridge = {}
+    user_input = "7"  # defined as num initially for while loop validation
+    selection = 0
+
+    # main function loop
+    while True:
+
+        # initial continue or back selection
+        while True:
+            user_input = input("please enter 1 to store food, or 2 to go back to main menu: ")
+            if user_input.isdigit():
+                if int(user_input) == 1 or int(user_input) == 2:
+                    break
+
+        selection = int(user_input)
+
+        # returns to main menu
+        if selection == 2:
+            return
+
+        # prints current categories
+        for key in fridge.keys():
+            print(key)
+
+        print()  # space
+
+        # enters category name
+
+        for key, values in fridge.items():
+            print(key, ": ")
+            for listValues in values:
+                print(listValues)
+
+        user_input = input("please enter the name of your category: ")
+
+        current_catagory = user_input
+
+        fridge[current_catagory] = []
+
+        # displays and allows for data to be changed
+        while True:
+
+            print("Your current category: ", current_catagory)
+
+            for values in fridge[current_catagory]:
+                print(values)
+
+            print()
+
+            user_input = input("now please enter foods that you want to add, any food will do, type (/end) to stop,"
+                               " type (/main) to return to main menu: ")
+
+            if user_input == "/end":
+                break
+
+            elif user_input == "/main":
+                return
+
+            else:
+                fridge[current_catagory].append(user_input)
+
+
 if __name__ == '__main__':
-    print('hello world')
 
-    test_function_for_adjacency_matrix()
+    user_choice = 0
 
-    print()
+    while True:
+        print('hello world')
 
-    input()  # pause input
+        food_Catagory_Storage()
+
+        while True:
+            user_choice = input("please enter 1 to go back to first function, or 2 to exit")
+            if user_choice.isdigit() and int(user_choice) == 1 or 2:
+                break
+            else:
+                continue
+
+        if user_choice == 1:
+            continue
+        else:
+            break
