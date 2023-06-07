@@ -1,5 +1,5 @@
 import math
-import sys
+import os
 
 
 def print_hi(name):
@@ -73,14 +73,16 @@ def test_function_for_adjacency_matrix():
         print('These nodes are not adjacent')
 
 
-def food_Catagory_Storage():
-    # defining variables
-    fridge = {}
+def food_catagory_storage(f_fridge):
+    os.system("cls")
+
     user_input = "7"  # defined as num initially for while loop validation
     selection = 0
 
     # main function loop
     while True:
+
+        os.system("cls")
 
         # initial continue or back selection
         while True:
@@ -89,37 +91,47 @@ def food_Catagory_Storage():
                 if int(user_input) == 1 or int(user_input) == 2:
                     break
 
+        os.system("cls")
+
         selection = int(user_input)
 
         # returns to main menu
         if selection == 2:
             return
 
-        # prints current categories
-        for key in fridge.keys():
-            print(key)
-
-        print()  # space
-
         # enters category name
 
-        for key, values in fridge.items():
+        for key, values in f_fridge.items():
             print(key, ": ")
             for listValues in values:
                 print(listValues)
+            print()  # space
 
-        user_input = input("please enter the name of your category: ")
+        print()  # space
 
-        current_catagory = user_input
+        user_input = input("please enter the name of your category or (/back) to exit back to selection: ")
 
-        fridge[current_catagory] = []
+        if user_input == "/back":
+            pass
+
+        else:
+            current_catagory = user_input
+
+            f_fridge[current_catagory] = []
+
+        os.system("cls")
 
         # displays and allows for data to be changed
         while True:
 
+            if user_input == "/back":
+                break
+
+            os.system("cls")
+
             print("Your current category: ", current_catagory)
 
-            for values in fridge[current_catagory]:
+            for values in f_fridge[current_catagory]:
                 print(values)
 
             print()
@@ -134,17 +146,21 @@ def food_Catagory_Storage():
                 return
 
             else:
-                fridge[current_catagory].append(user_input)
+                f_fridge[current_catagory].append(user_input)
 
 
-if __name__ == '__main__':
-
+def food_catagory_test():
     user_choice = 0
+    fridge = {}
 
     while True:
         print('hello world')
 
-        food_Catagory_Storage()
+        os.system("cls")
+
+        food_catagory_storage(fridge)
+
+        os.system("cls")
 
         while True:
             user_choice = input("please enter 1 to go back to first function, or 2 to exit")
@@ -153,7 +169,13 @@ if __name__ == '__main__':
             else:
                 continue
 
-        if user_choice == 1:
+        if int(user_choice) == 1:
             continue
         else:
             break
+
+
+
+if __name__ == '__main__':
+
+    food_catagory_test()
