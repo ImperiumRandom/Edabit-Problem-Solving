@@ -175,7 +175,15 @@ def food_catagory_test():
             break
 
 
+def length_of_a_line_segment(segment_1, segment_2):
+    line_length = math.sqrt(math.pow((segment_2[1]-segment_1[1]), 2) + math.pow((segment_2[0] - segment_1[0]), 2))
+    return round(line_length, 2)
+
+
+
+
+
 
 if __name__ == '__main__':
 
-    food_catagory_test()
+    print(length_of_a_line_segment([15, 7], [22, 11]))
